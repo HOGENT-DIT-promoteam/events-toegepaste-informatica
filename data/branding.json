@@ -1,0 +1,13 @@
+{
+  "companyName": "HOGENT",
+  "tagline": "Toegepaste Informatica",
+  "logo": "assets/programming-icon.svg",
+  "logoAlt": "HOGENT Toegepaste Informatica",
+  "primaryColor": "#0f172a",
+  "primarySoftColor": "#1d4ed8",
+  "accentColor": "#22c55e",
+  "headingFont": "\"Poppins\", \"Segoe UI\", sans-serif",
+  "bodyFont": "\"Inter\", \"Segoe UI\", sans-serif",
+  "backgroundColor": "#f4f7fb",
+  "surfaceColor": "#ffffff"
+}

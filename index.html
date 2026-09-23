@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Redirect landing page for event promotion and QR-friendly mobile browsing."
+    />
+    <title>Event Redirects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand-block">
+          <img id="company-logo" class="brand-mark" src="assets/logo.svg" alt="HOGENT logo" />
+          <div>
+            <p id="brand-tagline" class="eyebrow">Toegepaste Informatica</p>
+            <h1 id="brand-name">HOGENT</h1>
+          </div>
+        </div>
+        <a class="ghost-button" href="#events">Events</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p id="hero-kicker" class="eyebrow accent">Toegepaste Informatica</p>
+            <h2 id="hero-title">Evenementen en gebeurtenissen binnen en rond de opleiding.</h2>
+            <p id="hero-copy-text">
+              Evenementen voor alumni en studenten georganiseerd in samenwerking met de opleiding Toegepaste Informatica aan HOGENT
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#events">Bekijk all evenementen</a>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Featured event summary">
+            <p class="mini-label">Volgende Event</p>
+            <h3 id="featured-event-title">Voorbeeld Event</h3>
+            <ul id="featured-event-meta">
+              <li><strong>Datum:</strong> 15 Oct 2026 • 18:30</li>
+              <li><strong>Locatie:</strong> Campus Schoonmeersen</li>
+              <li><strong>Informatie:</strong> Live campus updates</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="events-section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow accent">Binnenkort</p>
+              <h2>Events</h2>
+            </div>
+          </div>
+
+          <div id="event-grid" class="event-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

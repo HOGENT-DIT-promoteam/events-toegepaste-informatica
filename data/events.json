@@ -1,0 +1,94 @@
+{
+  "events": [
+    {
+      "title": "Mainframe Day",
+      "date": "2026-10-05",
+      "time": "10:00",
+      "location": "Campus Schoonmeersen, Ghent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "IT Innovation Cup",
+      "date": "2026-10-15",
+      "time": "18:30",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "Alumni Testimonials",
+      "date": "2026-10-15",
+      "time": "18:30",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "CfgMgmtCamp",
+      "date": "2027-01-02",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://cfgmgmtcamp.org/ghent2027",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "Tech & Trend Days",
+      "date": "2027-11-02",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "Heimdal LAN Party",
+      "date": "2027-11-02",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://heimdal.be/evenementen",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "IT-Lab Game Jam",
+      "date": "2027-02-04",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://reagent.it-lab.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "IT-studiereis Berlijn",
+      "date": "2027-04-04",
+      "time": "09:00",
+      "location": "Berlijn",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "Star Wars @ HOGENT",
+      "date": "2027-05-04",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    },
+    {
+      "title": "IT-Alumni Night",
+      "date": "2027-05-31",
+      "time": "09:00",
+      "location": "Campus Schoonmeersen, Gent",
+      "website": "https://www.hogent.be",
+      "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      "category": "Event"
+    }
+  ]
+}
