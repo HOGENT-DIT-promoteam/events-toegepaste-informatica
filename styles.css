@@ -248,6 +248,13 @@ img {
   padding: 1.2rem 1.2rem 1.3rem;
 }
 
+.event-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .event-tag {
   display: inline-flex;
   align-items: center;
@@ -258,6 +265,34 @@ img {
   color: #166534;
   font-size: 0.76rem;
   font-weight: 700;
+}
+
+.event-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #4b5563;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.event-card.past {
+  opacity: 0.7;
+  filter: grayscale(0.8);
+  background: #f3f4f6;
+}
+
+.event-card.past .event-banner {
+  filter: grayscale(0.9) saturate(0.7);
+}
+
+.event-card.past .event-tag {
+  background: #e5e7eb;
+  color: #4b5563;
 }
 
 .event-card h3 {

@@ -38,6 +38,12 @@ function getSortedEvents(events) {
   return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
+function isPastEvent(dateString) {
+  const eventDate = new Date(`${dateString}T23:59:59`);
+  const today = new Date();
+  return eventDate < today;
+}
+
 function renderFeaturedEvent(event) {
   if (!event) return;
 
@@ -51,12 +57,17 @@ function renderFeaturedEvent(event) {
 
 function renderEvents(events) {
   eventGrid.innerHTML = events
-    .map(
-      (event) => `
-        <article class="event-card">
+    .map((event) => {
+      const isPast = isPastEvent(event.date);
+
+      return `
+        <article class="event-card ${isPast ? "past" : ""}">
           <img class="event-banner" src="${event.image}" alt="${event.title} banner" />
           <div class="event-content">
-            <span class="event-tag">${event.category}</span>
+            <div class="event-meta-row">
+              <span class="event-tag">${event.category}</span>
+              ${isPast ? '<span class="event-status">Afgelopen</span>' : ""}
+            </div>
             <h3>${event.title}</h3>
             <ul class="meta-list">
               <li class="meta-item"><strong>Datum:</strong> ${formatDate(event.date)} • ${formatTime(event.time)}</li>
@@ -67,8 +78,8 @@ function renderEvents(events) {
             </div>
           </div>
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
