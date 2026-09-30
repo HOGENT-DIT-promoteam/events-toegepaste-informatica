@@ -44,6 +44,10 @@ function isPastEvent(dateString) {
   return eventDate < today;
 }
 
+function getNextUpcomingEvent(events) {
+  return events.find((event) => !isPastEvent(event.date)) || events[events.length - 1];
+}
+
 function renderFeaturedEvent(event) {
   if (!event) return;
 
@@ -51,7 +55,6 @@ function renderFeaturedEvent(event) {
   featuredEventMeta.innerHTML = `
     <li><strong>Datum:</strong> ${formatDate(event.date)} • ${formatTime(event.time)}</li>
     <li><strong>Locatie:</strong> ${event.location}</li>
-    <li><strong>Informatie:</strong> ${event.website.replace(/^https?:\/\//, "")}</li>
   `;
 }
 
@@ -97,12 +100,13 @@ async function loadSiteData() {
     const branding = await brandingResponse.json();
     const { events } = await eventsResponse.json();
     const sortedEvents = getSortedEvents(events);
+    const nextUpcomingEvent = getNextUpcomingEvent(sortedEvents);
 
     applyBranding(branding);
     renderEvents(sortedEvents);
 
-    if (sortedEvents.length > 0) {
-      renderFeaturedEvent(sortedEvents[0]);
+    if (nextUpcomingEvent) {
+      renderFeaturedEvent(nextUpcomingEvent);
     }
   } catch (error) {
     console.error("Could not load JSON data:", error);
