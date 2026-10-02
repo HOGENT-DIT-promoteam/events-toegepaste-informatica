@@ -131,6 +131,13 @@ img {
   background: rgba(37, 99, 235, 0.08);
 }
 
+.muted-button {
+  color: #6b7280;
+  background: #e5e7eb;
+  border: 1px solid rgba(107, 114, 128, 0.15);
+  cursor: default;
+}
+
 .ghost-button:hover,
 .primary-button:hover,
 .secondary-button:hover {

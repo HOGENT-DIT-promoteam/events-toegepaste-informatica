@@ -56,7 +56,8 @@
     },
     {
       "title": "CfgMgmtCamp",
-      "date": "2027-01-02",
+      "date": "2027-02-01",
+      "endDate": "2027-02-03",
       "time": "09:00",
       "location": "Campus Schoonmeersen, Gent",
       "website": "https://cfgmgmtcamp.org/ghent2027",
@@ -65,10 +66,10 @@
     },
     {
       "title": "Tech & Trend Days",
-      "date": "2027-11-02",
+      "date": "2027-02-11",
+      "endDate": "2027-02-12",
       "time": "09:00",
       "location": "Campus Schoonmeersen, Gent",
-      "website": "https://www.hogent.be",
       "image": "assets/banners/Tech_Trend_Days.png",
       "category": "Event"
     },
@@ -86,13 +87,12 @@
       "date": "2027-03-02",
       "time": "12:00",
       "location": "Campus Schoonmeersen, Gent",
-      "website": "https://www.hogent.be",
       "image": "assets/banners/IT-career_event.png",
       "category": "Event"
     },
     {
       "title": "IT-Lab Game Jam",
-      "date": "2027-02-04",
+      "date": "2027-04-02",
       "time": "09:00",
       "location": "Campus Schoonmeersen, Gent",
       "website": "https://reagent.it-lab.be",
@@ -104,7 +104,6 @@
       "date": "2027-04-04",
       "time": "09:00",
       "location": "Berlijn",
-      "website": "https://www.hogent.be",
       "image": "assets/banners/Studiereis_Berlijn.jpg",
       "category": "Event"
     },
@@ -113,7 +112,6 @@
       "date": "2027-05-04",
       "time": "18:00",
       "location": "Campus Schoonmeersen, Gent",
-      "website": "https://www.hogent.be",
       "image": "assets/banners/Starwars.webp",
       "category": "Event"
     },
@@ -122,7 +120,6 @@
       "date": "2027-05-31",
       "time": "17:00",
       "location": "Campus Schoonmeersen, Gent",
-      "website": "https://www.hogent.be",
       "image": "assets/banners/alumni_night.jpg",
       "category": "Event"
     }

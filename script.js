@@ -18,6 +18,42 @@ const formatTime = (value) =>
     minute: "2-digit"
   }).format(new Date(`2026-01-01T${value}:00`));
 
+function getEventEndDate(event) {
+  return event.endDate || event.date;
+}
+
+function formatEventDate(event) {
+  const start = new Date(`${event.date}T00:00:00`);
+  const end = event.endDate ? new Date(`${event.endDate}T00:00:00`) : null;
+
+  if (!end || start.getTime() === end.getTime()) {
+    return `${new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "short"
+    }).format(start)} • ${formatTime(event.time)}`;
+  }
+
+  const sameMonth = start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear();
+
+  if (sameMonth) {
+    return `${new Intl.DateTimeFormat("en-GB", {
+      day: "numeric"
+    }).format(start)}–${new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "short"
+    }).format(end)} • ${formatTime(event.time)}`;
+  }
+
+  return `${new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short"
+  }).format(start)}–${new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  }).format(end)} • ${formatTime(event.time)}`;
+}
+
 function applyBranding(branding) {
   document.title = branding.companyName || "Event Redirects";
   brandName.textContent = branding.companyName || "Event Redirects";
@@ -38,14 +74,14 @@ function getSortedEvents(events) {
   return [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
-function isPastEvent(dateString) {
-  const eventDate = new Date(`${dateString}T23:59:59`);
+function isPastEvent(event) {
+  const eventDate = new Date(`${getEventEndDate(event)}T23:59:59`);
   const today = new Date();
   return eventDate < today;
 }
 
 function getNextUpcomingEvent(events) {
-  return events.find((event) => !isPastEvent(event.date)) || events[events.length - 1];
+  return events.find((event) => !isPastEvent(event)) || events[events.length - 1];
 }
 
 function renderFeaturedEvent(event) {
@@ -53,7 +89,7 @@ function renderFeaturedEvent(event) {
 
   featuredEventTitle.textContent = event.title;
   featuredEventMeta.innerHTML = `
-    <li><strong>Datum:</strong> ${formatDate(event.date)} • ${formatTime(event.time)}</li>
+    <li><strong>Datum:</strong> ${formatEventDate(event)}</li>
     <li><strong>Locatie:</strong> ${event.location}</li>
   `;
 }
@@ -61,7 +97,11 @@ function renderFeaturedEvent(event) {
 function renderEvents(events) {
   eventGrid.innerHTML = events
     .map((event) => {
-      const isPast = isPastEvent(event.date);
+      const isPast = isPastEvent(event);
+      const hasWebsite = Boolean(event.website && event.website.trim());
+      const actionButton = hasWebsite
+        ? `<a class="secondary-button" href="${event.website}" target="_blank" rel="noreferrer">Informatie</a>`
+        : '<span class="secondary-button muted-button">Meer info volgt</span>';
 
       return `
         <article class="event-card ${isPast ? "past" : ""}">
@@ -73,11 +113,11 @@ function renderEvents(events) {
             </div>
             <h3>${event.title}</h3>
             <ul class="meta-list">
-              <li class="meta-item"><strong>Datum:</strong> ${formatDate(event.date)} • ${formatTime(event.time)}</li>
+              <li class="meta-item"><strong>Datum:</strong> ${formatEventDate(event)}</li>
               <li class="meta-item"><strong>Locatie:</strong> ${event.location}</li>
             </ul>
             <div class="event-actions">
-              <a class="secondary-button" href="${event.website}" target="_blank" rel="noreferrer">Informatie</a>
+              ${actionButton}
             </div>
           </div>
         </article>
