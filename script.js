@@ -128,9 +128,10 @@ function renderEvents(events) {
 
 async function loadSiteData() {
   try {
+    const buildId = Date.now();
     const [brandingResponse, eventsResponse] = await Promise.all([
-      fetch("data/branding.json"),
-      fetch("data/events.json")
+      fetch(`data/branding.json?v=${buildId}`),
+      fetch(`data/events.json?v=${buildId}`)
     ]);
 
     if (!brandingResponse.ok || !eventsResponse.ok) {

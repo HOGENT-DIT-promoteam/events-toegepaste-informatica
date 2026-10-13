@@ -28,8 +28,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Generate cache-busting build ID
+        run: echo "BUILD_ID=$(date +%Y%m%d%H%M%S)-${GITHUB_SHA::7}" >> "$GITHUB_ENV"
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
+
+      - name: Inject cache-busting version into static assets
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          build_id = os.environ["BUILD_ID"]
+          index_path = Path("index.html")
+          html = index_path.read_text(encoding="utf-8")
+          html = html.replace("styles.css", f"styles.css?v={build_id}")
+          html = html.replace("script.js", f"script.js?v={build_id}")
+          index_path.write_text(html, encoding="utf-8")
+          PY
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
